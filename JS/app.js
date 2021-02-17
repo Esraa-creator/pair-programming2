@@ -1,4 +1,5 @@
 'use strict';
+let count = 0;
 alert('Welcome in my web page ,would you like to play guessing game about me ?');
 let userName = prompt('Tell me your name,please!');
 alert('welcome to my web page ' + userName);
@@ -84,32 +85,38 @@ if (guessing5.toLowerCase() === 'yes') {
 
 // { breaks; }
 
-let count = 0;
+
 let weight = Number(prompt('How much do I weigh ?'));
-while (weight === '' && weight === null) {
-  weight = Number(prompt('How much do I weigh ?'));
-}
-
-
-for (let i = 0; i < 3; i++) {
-  if (weight > 58) {
-    alert('too high');
-    weight = (prompt('How much do I weigh ?'));
+function myWeight(weightAnswer){
+  while (weightAnswer === '' && weightAnswer === null) {
+    weightAnswer = Number(prompt('How much do I weigh ?'));
   }
-  else if (weight < 58) {
-    alert('too low');
-    weight = Number(prompt('How much do I weigh ?'));
+  
+  
+  for (let i = 0; i < 3; i++) {
+    if (weightAnswer === '58') {
+      alert('thats right');
+      count++;
+      alert('your score is : ' + count);
+      break;
+    } else if (weightAnswer < 58) {
+      alert('too low');
+      weightAnswer = Number(prompt('How much do I weigh ?'));
+    }
+    else if 
+      (weightAnswer > 58) {
+        alert('too high');
+        weightAnswer = (prompt('How much do I weigh ?'));
+      }
+  
+    }
   }
-  else if (weight === '58') {
-    alert('thats right');
-    count++;
-    alert('your score is : ' + count);
-    break;
 
-  }
-}
 
-let tall = Number(prompt('How tall am I ?'));
+myWeight(weight);
+
+
+/*let tall = Number(prompt('How tall am I ?'));
 while (tall === '' && tall === null) {
   tall = (prompt('How tall am I ?'));
 }
@@ -212,6 +219,6 @@ for (let i = 0; i < 6; i++) {
   }
 
 }
-alert('the  most beautiful citie in the world I would love to visit? Barcelona ');
+alert('the  most beautiful citie in the world I would love to visit? Barcelona ');*/
 
 
